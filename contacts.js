@@ -1,4 +1,4 @@
-const NUM_CONTACTS = 100
+const NUM_CONTACTS = 10
 
 const firstNames = ['Emma','Noah','Olivia','Liam','Ava','William','Sophia','Mason','Isabella','James','Mia','Benjamin','Charlotte','Jacob','Abigail','Michael','Emily','Elijah','Harper','Ethan','Amelia','Alexander','Evelyn','Oliver','Elizabeth','Daniel','Sofia','Lucas','Madison','Matthew','Avery','Aiden','Ella','Jackson','Scarlett','Logan','Grace','David','Chloe','Joseph','Victoria','Samuel','Riley','Henry','Aria','Owen','Lily','Sebastian','Aubrey','Gabriel','Zoey','Carter','Penelope','Jayden','Lillian','John','Addison','Luke','Layla','Anthony','Natalie','Isaac','Camila','Dylan','Hannah','Wyatt','Brooklyn','Andrew','Zoe','Joshua','Nora','Christopher','Leah','Grayson','Savannah','Jack','Audrey','Julian','Claire','Ryan','Eleanor','Jaxon','Skylar','Levi','Ellie','Nathan','Samantha','Caleb','Stella','Hunter','Paisley','Christian','Violet','Isaiah','Mila','Thomas','Allison','Aaron','Alexa','Lincoln']
 
@@ -14,10 +14,31 @@ const generateName = () => `${firstNames[rand(firstNames.length - 1)]} ${lastNam
 const generatePhoneNumber = () => `${rand(999, 100)}-${rand(999, 100)}-${rand(9999, 1000)}`
 
 // create a person
-const createContact = () => ({name: generateName(), phone: generatePhoneNumber()})
+const data = [{
+  kategorija: "autodijelovi", 
+  proizvodi: ["ulje","bregasta","turbo","gume"], 
+  trgovina: "Tokic", 
+  cordLatitude:45.78921,
+  cordLongitude:16.031615,
+  columns: [{name: "a"}]
+}, {
+  kategorija: "prehrana", 
+  proizvodi: ["ulje","bregasta","turbo","gume"], 
+  trgovina: "Plodine", 
+  cordLatitude:45.78921,
+  cordLongitude:16.031615,
+}, {
+  kategorija: "prehrana", 
+  proizvodi: ["ulje","bregasta","turbo","gume"], 
+  trgovina: "Spar", 
+  cordLatitude:45.78921,
+  cordLongitude:16.031615,
+}];
 
-// compare two contacts for alphabetizing
-export const compareNames = (contact1, contact2) => contact1.name > contact2.name
+
+
+const createContact = () => ({name: 'test', phone: generatePhoneNumber()})
+
 
 // add keys to based on index
 const addKeys = (val, key) => ({key, ...val})

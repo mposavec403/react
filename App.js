@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, FlatList, ScrollView, StyleSheet, View, Text, SectionList } from 'react-native';
 import Constants  from 'expo-constants'
 
-import contacts, {compareNames} from './contacts'
+import contacts from './contacts'
 import Row from './Row'
 import ContactList from './ContactList'
 import AddContactForm from './AddContactForm'
@@ -31,7 +31,6 @@ export default class App extends React.Component {
   }
 
 
-sort = () => this.setState(prevState => ({contacts: [...prevState.contacts].sort(compareNames)}))
 
 
 
@@ -42,7 +41,7 @@ sort = () => this.setState(prevState => ({contacts: [...prevState.contacts].sort
         <Button title="toggle contacts" onPress={this.toggleContacts} />
         <Button title="sort" onPress={this.sort}/>
         <Button title="Add Contact" onPress={this.toggleForm} />
-        {this.state.showContacts && <ContactList contacts = {this.state.contacts} />}
+        <ContactList contacts = {this.state.contacts} />
       </View>
     );
   }
